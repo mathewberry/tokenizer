@@ -5,15 +5,27 @@ A very lightweight token system for micro-services
 
 ### Service Provider
 
-Remove ``` $app->register(App\Providers\AuthServiceProvider::class); ```
+Remove 
+```PHP
+$app->register(App\Providers\AuthServiceProvider::class); 
+```
 
-Add ``` $app->register(Mathewberry\Tokenizer\TokenServiceProvider::class); ```
+Add 
+```PHP
+$app->register(Mathewberry\Tokenizer\TokenServiceProvider::class); 
+```
 
 ### Route Middleware 
 
-Remove ``` 'auth' => App\Http\Middleware\Authenticate::class, ```
+Remove 
+```PHP
+'auth' => App\Http\Middleware\Authenticate::class, 
+```
 
-Add ``` 'auth' => Mathewberry\Tokenizer\Middleware\Authenticate::class, ```
+Add
+ ```PHP
+'auth' => Mathewberry\Tokenizer\Middleware\Authenticate::class, 
+ ```
 
 ### Generate a new token
 
