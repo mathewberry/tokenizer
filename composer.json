@@ -1,0 +1,24 @@
+{
+	"name": "mathewberry/tokenizer",
+	"description": "A very lightweight token system for micro-services",
+	"license": "GNU",
+	"support": {
+		"issues": "https://github.com/mathewberry/tokenizer/issues",
+		"source": "https://github.com/mathewberry/tokenizer"
+	},
+	"authors": [
+		{
+			"name": "Mathew Berry",
+			"email": "contact@mathewberry.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Mathewberry\\Tokenizer\\": "src/"
+		}
+	},
+    "require": {
+        "illuminate/console": "^5.4"
+    },
+	"minimum-stability": "dev"
+}
