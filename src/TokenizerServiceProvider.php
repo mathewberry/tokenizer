@@ -4,10 +4,10 @@ namespace Mathewberry\Tokenizer;
 
 use Illuminate\Support\ServiceProvider;
 
-class AuthServiceProvider extends ServiceProvider
+class TokenizerServiceProvider extends ServiceProvider
 {
     protected $commands = [
-        Mathewberry\Commands\Token::class,
+        \Mathewberry\Tokenizer\Commands\Token::class,
     ];
 
     /**
