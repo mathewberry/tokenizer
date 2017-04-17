@@ -27,7 +27,7 @@ class Token extends Command
      */
     public function handle()
     {
-        $this->line( 'Place this token in your .env [API_TOKEN] key' );
+        $this->line( 'Place this token in your config.php [API_TOKEN] key' );
         $this->line( bin2hex( openssl_random_pseudo_bytes(22 ) ) );
     }
 }
