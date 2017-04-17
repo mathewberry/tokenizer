@@ -29,9 +29,9 @@ class TokenizerServiceProvider extends ServiceProvider
     {
         $this->app['auth']->viaRequest('api', function ($request)
         {
-            $request_token = $request->header('api_token');
+            $request_token = $request->header('api-token');
 
-            if ( $request_token && $request_token == env('API_TOKEN') )
+            if ( $request_token && $request_token == getenv('API_TOKEN') )
             {
                 return $request;
             }
