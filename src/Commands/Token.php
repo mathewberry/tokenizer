@@ -35,7 +35,7 @@ class Token extends Command
             file_get_contents($this->laravel->environmentFilePath())
         ));
 
-        $this->info("Application key [$key] set successfully.");
+        $this->info("API token [$key] set successfully.");
     }
 
     /**
