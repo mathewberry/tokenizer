@@ -29,10 +29,10 @@ class Token extends Command
     {
         $key = bin2hex( openssl_random_pseudo_bytes(18) );
 
-        file_put_contents( $this->laravel->environmentFilePath(), preg_replace(
+        file_put_contents( base_path('/.env'), preg_replace(
             $this->keyReplacementPattern(),
             'API_TOKEN='.$key,
-            file_get_contents($this->laravel->environmentFilePath())
+            file_get_contents(base_path('/.env'))
         ));
 
         $this->info("API token [$key] set successfully.");
