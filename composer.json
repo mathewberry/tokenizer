@@ -17,7 +17,7 @@
 			"Mathewberry\\Tokenizer\\": "src/"
 		}
 	},
-    "require": {
+    "require-dev": {
         "illuminate/console": "^5.4"
     },
 	"minimum-stability": "dev"

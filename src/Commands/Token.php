@@ -27,7 +27,26 @@ class Token extends Command
      */
     public function handle()
     {
-        $this->line( 'Place this token in your config.php [API_TOKEN] key' );
-        $this->line( bin2hex( openssl_random_pseudo_bytes(22 ) ) );
+        $key = bin2hex( openssl_random_pseudo_bytes(18) );
+
+        file_put_contents( $this->laravel->environmentFilePath(), preg_replace(
+            $this->keyReplacementPattern(),
+            'API_TOKEN='.$key,
+            file_get_contents($this->laravel->environmentFilePath())
+        ));
+
+        $this->info("Application key [$key] set successfully.");
+    }
+
+    /**
+     * Get a regex pattern that will match env APP_KEY with any random key.
+     *
+     * @return string
+     */
+    protected function keyReplacementPattern()
+    {
+        $escaped = preg_quote('='.env('API_TOKEN'), '/');
+
+        return "/^API_TOKEN{$escaped}/m";
     }
 }

@@ -12,7 +12,7 @@ $app->register(App\Providers\AuthServiceProvider::class);
 
 Add 
 ```PHP
-$app->register(Mathewberry\Tokenizer\TokenServiceProvider::class); 
+$app->register(Mathewberry\Tokenizer\TokenizerServiceProvider::class); 
 ```
 
 ### Route Middleware 
